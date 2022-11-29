@@ -26,7 +26,10 @@ app.get('/app/roll', (req, res) => {
 
 //Endpoint /app/roll  2
 app.post('/app/roll', (req, res) => {
-    res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
+    var sides = parseInt(req.body.sides);
+    var dice = parseInt(req.body.dice);
+    var rolls = parseInt(req.body.rolls);
+    res.status(200).send(roll(sides, dice, rolls));
 })
 
 //Endpoint /app/roll/:sides
