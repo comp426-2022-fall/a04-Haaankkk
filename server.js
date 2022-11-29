@@ -31,12 +31,12 @@ app.post('/app/roll', (req, res) => {
 })
 
 //Endpoint /app/roll/:sides
-app.get('app/roll/:sides/', (req, res) => {
+app.get('/app/roll/:sides/', (req, res) => {
     res.status(200).send(roll(parseInt(req.params.sides), 2, 1));
 })
 
 //Endpoint /app/roll/:sides/:dice
-app.get('app/roll/:sides/:dice/', (req, res) => {
+app.get('/app/roll/:sides/:dice/', (req, res) => {
     res.status(200).send(roll(parseInt(req.params.sides), parseInt(req.params.dice), 1));
 })
 
