@@ -40,7 +40,7 @@ app.get('app/roll/:sides/:dice/', (req, res) => {
 })
 
 //Endpoint /app/roll/:sides/:dice/:roll
-app.get('/app/roll/:sides/:dice/:roll', (req, res) => {
+app.get('/app/roll/:sides/:dice/:roll/', (req, res) => {
     res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
 })
 
