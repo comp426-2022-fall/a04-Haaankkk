@@ -12,10 +12,6 @@ const port = args.port || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('*', (req, res) => {
-    res.status(404).send('404 NOT FOUND');
-})
-
 app.listen(port, () => { })
 
 //Endpoint /app/
@@ -46,5 +42,9 @@ app.get('app/roll/:sides/:dice/', (req, res) => {
 //Endpoint /app/roll/:sides/:dice/:roll
 app.get('/app/roll/:sides/:dice/:roll', (req, res) => {
     res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
+})
+
+app.get('*', (req, res) => {
+    res.status(404).send('404 NOT FOUND');
 })
 
